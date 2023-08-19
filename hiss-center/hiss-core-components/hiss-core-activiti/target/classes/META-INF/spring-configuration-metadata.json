@@ -1,0 +1,29 @@
+{
+  "groups": [
+    {
+      "name": "hiss.message.mail",
+      "type": "cn.itcast.hiss.process.activiti.properties.MailServerInfoProperties",
+      "sourceType": "cn.itcast.hiss.process.activiti.properties.MailServerInfoProperties"
+    },
+    {
+      "name": "hiss.scaffold",
+      "type": "cn.itcast.hiss.process.activiti.properties.ScaffoldProperties",
+      "sourceType": "cn.itcast.hiss.process.activiti.properties.ScaffoldProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hiss.message.mail.servers",
+      "type": "java.util.Map<java.lang.String,cn.itcast.hiss.process.activiti.properties.MailServerInfo>",
+      "description": "获取每个租户的邮件服务器地址",
+      "sourceType": "cn.itcast.hiss.process.activiti.properties.MailServerInfoProperties"
+    },
+    {
+      "name": "hiss.scaffold.systems",
+      "type": "java.util.Map<java.lang.String,cn.itcast.hiss.process.activiti.properties.ScaffoldInfo>",
+      "description": "获取每个租户的邮件服务器地址",
+      "sourceType": "cn.itcast.hiss.process.activiti.properties.ScaffoldProperties"
+    }
+  ],
+  "hints": []
+}

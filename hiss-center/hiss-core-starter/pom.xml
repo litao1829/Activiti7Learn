@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modules>
+        <module>hiss-message-http-sender-spring-boot-starter</module>
+        <module>hiss-message-http-receiver-spring-boot-starter</module>
+        <module>hiss-message-tcp-server-spring-boot-starter</module>
+        <module>hiss-message-tcp-client-spring-boot-starter</module>
+        <module>hiss-server-spring-boot-starter</module>
+    </modules>
+    <parent>
+        <artifactId>hiss-center</artifactId>
+        <groupId>cn.itcast</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.itcast</groupId>
+    <artifactId>hiss-core-starter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+</project>

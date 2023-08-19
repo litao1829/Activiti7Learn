@@ -1,0 +1,6 @@
+# 设置JAVA版本
+FROM adoptopenjdk/openjdk11
+# 拷贝运行JAR包
+COPY hiss-server-spring-boot-starter-1.0-SNAPSHOT.jar /app.jar
+# 入口点， 执行JAVA运行命令
+CMD java -Dspring.profiles.active=test -jar /app.jar

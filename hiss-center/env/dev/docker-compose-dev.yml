@@ -1,0 +1,33 @@
+version: "3.0"
+services:
+  dev-gogs:
+    container_name: "dev-gogs"
+    image: gogs/gogs
+    volumes:
+      - /root/data/gogs/data:/data
+    ports:
+      - 11080:3000
+  dev-mysql:
+    container_name: "dev-mysql"
+    image: mysql:8.0.18
+    volumes:
+      - /root/data/mysql/my.cnf:/etc/mysql/my.cnf
+      - /root/data/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=87sdhf298TYUUIz2!
+    network_mode: host
+  dev-redis:
+    container_name: "dev-redis"
+    image: redis
+    network_mode: host
+    command: redis-server --appendonly yes
+  dev-nginx:
+    container_name: "dev-nginx"
+    image: nginx
+    volumes:
+      - /root/dev/nginx/hiss-center-ui:/usr/share/nginx/html/hiss-center-ui
+      - /root/dev/nginx/hiss-designer-ui:/usr/share/nginx/html/hiss-designer-ui
+      - /root/dev/nginx/nginx.conf:/etc/nginx/nginx.conf
+    environment:
+      - MODE=standalone
+    network_mode: host

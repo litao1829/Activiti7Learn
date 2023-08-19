@@ -1,0 +1,41 @@
+version: "3.0"
+services:
+  hiss-mysql:
+    container_name: "hiss-demo-mysql"
+    image: mysql:8.0.18
+    volumes:
+      - /root/data/mysql/my.cnf:/etc/mysql/my.cnf
+      - /root/data/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=87sdhf298TYUUIz2!
+    network_mode: host
+  hiss-redis:
+    container_name: "hiss-demo-redis"
+    image: redis
+    network_mode: host
+    command: redis-server --appendonly yes
+  hiss-nginx:
+    container_name: "hiss-demo-nginx"
+    image: nginx
+    volumes:
+      - /root/demo/nginx/hiss-center:/usr/share/nginx/html/hiss-center
+      - /root/demo/nginx/ppt:/usr/share/nginx/html/ppt
+      - /root/demo/nginx/project-zhyl-admin-vue3-java:/usr/share/nginx/html/project-zhyl-admin-vue3-java
+      - /root/demo/nginx/nginx.conf:/etc/nginx/nginx.conf
+    environment:
+      - MODE=standalone
+    network_mode: host
+  hiss-center:
+    container_name: "hiss-demo-center"
+    volumes:
+      - /root/demo/template:/root/demo/template
+    build:
+      context: .
+      dockerfile: DockerfileCenter
+    network_mode: host
+  hiss-zhyl:
+    container_name: "hiss-demo-zhyl"
+    build:
+      context: .
+      dockerfile: DockerfileZhyl
+    network_mode: host

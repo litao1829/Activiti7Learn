@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "name": "hiss.message.receiver",
+      "type": "cn.itcast.hiss.cmd.properties.MessageReceiverProperties",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverProperties"
+    },
+    {
+      "name": "hiss.message.receiver.pool",
+      "type": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hiss.message.receiver.pool.close-await-time",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.receiver.pool.core-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.receiver.pool.executor-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.receiver.pool.keep-alive-time",
+      "type": "java.lang.Long",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.receiver.pool.max-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.receiver.pool.queue-size",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.receiver.pool.thread-name-prefix",
+      "type": "java.lang.String",
+      "sourceType": "cn.itcast.hiss.cmd.properties.MessageReceiverAsyncExecutorProperties"
+    }
+  ],
+  "hints": []
+}

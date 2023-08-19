@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "name": "hiss.message.tcp",
+      "type": "cn.itcast.hiss.message.server.perporties.MessageTcpServerProperties",
+      "sourceType": "cn.itcast.hiss.message.server.perporties.MessageTcpServerProperties"
+    },
+    {
+      "name": "hiss.message.tcp.receiver",
+      "type": "cn.itcast.hiss.message.server.perporties.MessageTcpReceiverProperties",
+      "sourceType": "cn.itcast.hiss.message.server.perporties.MessageTcpReceiverProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hiss.message.tcp.port",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.message.server.perporties.MessageTcpServerProperties"
+    },
+    {
+      "name": "hiss.message.tcp.read-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.message.server.perporties.MessageTcpServerProperties"
+    },
+    {
+      "name": "hiss.message.tcp.receiver.sources",
+      "type": "java.util.Map<java.lang.String,cn.itcast.hiss.message.server.perporties.TcpReceiverSource>",
+      "description": "获取每个租户的远程调用地址",
+      "sourceType": "cn.itcast.hiss.message.server.perporties.MessageTcpReceiverProperties"
+    }
+  ],
+  "hints": []
+}

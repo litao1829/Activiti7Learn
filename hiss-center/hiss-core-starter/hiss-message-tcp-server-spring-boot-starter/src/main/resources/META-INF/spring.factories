@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    cn.itcast.hiss.message.server.config.MessageTcpServerAutoConfiguration

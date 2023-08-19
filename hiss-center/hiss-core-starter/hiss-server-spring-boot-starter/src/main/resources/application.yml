@@ -1,0 +1,65 @@
+server:
+    port: 8081
+
+spring:
+  activiti:
+    deployment-mode: never-fail
+    db-history-used: true
+    check-process-definitions: false # 关闭自动部署
+    history-level: full
+  application:
+    name: hiss-server-spring-boot-starter
+  datasource:
+    password: 87sdhf298TYUUIz2!
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.126.128:3306/hiss-dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&nullCatalogMeansCurrent=true
+
+mybatis-plus:
+  type-aliases-package: cn.itcast.hiss.server.pojos
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#logging:
+#  level:
+#    com.miukoo: info
+#    org.activiti.engine.impl.persistence.entity: info
+#    org.activiti.engine.impl.persistence.entity.JobEntity: info  #定时任务
+#    org.activiti.engine.impl.persistence.entity.JobEntityImpl: info  #定时任务
+#    org.activiti.engine.impl.persistence.entity.JobEntityManager: info  #定时任务
+#    org.activiti.engine.impl.persistence.entity.JobEntityManagerImpl: info  #定时任务
+
+hiss:
+  message:
+    tcp:
+      port: 10003
+      #port: 10004
+      receiver:
+        sources:
+          tenant_hiss:
+            encrypt: false
+            authType: NONE
+          zhyl_app:
+            encrypt: false
+            authType: NONE
+
+    http:
+      receiver:
+        sources:
+          tenant_hiss:
+            encrypt: false
+            authType: HUTOOL_JWT
+            exclude-auth-ids:
+              - SYSTEM_USER_LOGIN
+          zhyl_app:
+            encrypt: false
+            authType: NONE
+            token-key: $2a$10$PVtHnkj86mJgf6li/yron.LRx/cQAlaiZkBJ9BeogCNTryXJRT1YC
+  scaffold:
+    systems:
+      ruoyi:
+        templatePath: E:\111111\22222
+        tempPath: E:\111111\ruoyi
+      yanglao:
+        templatePath: E:\111111\22222
+        tempPath: E:\111111\yanglao

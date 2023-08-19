@@ -1,0 +1,76 @@
+{
+  "groups": [
+    {
+      "name": "hiss.message.sender",
+      "type": "cn.itcast.hiss.message.sender.properties.MessageSenderProperties",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool",
+      "type": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hiss.message.sender.auth-type",
+      "type": "cn.itcast.hiss.message.MessageAuthType",
+      "description": "授权类型",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderProperties"
+    },
+    {
+      "name": "hiss.message.sender.encrypt",
+      "type": "java.lang.Boolean",
+      "description": "是否签名",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderProperties"
+    },
+    {
+      "name": "hiss.message.sender.encrypt-content",
+      "type": "java.lang.String",
+      "description": "签名",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool.close-await-time",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool.core-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool.executor-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool.keep-alive-time",
+      "type": "java.lang.Long",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool.max-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool.queue-size",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.sender.pool.thread-name-prefix",
+      "type": "java.lang.String",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderAsyncExecutorProperties"
+    },
+    {
+      "name": "hiss.message.sender.tenant",
+      "type": "java.lang.String",
+      "description": "租户id",
+      "sourceType": "cn.itcast.hiss.message.sender.properties.MessageSenderProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,29 @@
+{
+  "groups": [
+    {
+      "name": "hiss.message.http.receiver",
+      "type": "cn.itcast.hiss.message.http.receiver.properties.MessageHttpReceiverProperties",
+      "sourceType": "cn.itcast.hiss.message.http.receiver.properties.MessageHttpReceiverProperties"
+    },
+    {
+      "name": "hiss.message.server.http.sender",
+      "type": "cn.itcast.hiss.message.http.receiver.properties.MessageHttpSenderProperties",
+      "sourceType": "cn.itcast.hiss.message.http.receiver.properties.MessageHttpSenderProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hiss.message.http.receiver.sources",
+      "type": "java.util.Map<java.lang.String,cn.itcast.hiss.message.http.receiver.properties.HttpReceiverSource>",
+      "description": "获取每个租户的远程调用地址",
+      "sourceType": "cn.itcast.hiss.message.http.receiver.properties.MessageHttpReceiverProperties"
+    },
+    {
+      "name": "hiss.message.server.http.sender.sources",
+      "type": "java.util.Map<java.lang.String,cn.itcast.hiss.message.http.receiver.properties.HttpSenderSource>",
+      "description": "获取每个租户的远程调用地址",
+      "sourceType": "cn.itcast.hiss.message.http.receiver.properties.MessageHttpSenderProperties"
+    }
+  ],
+  "hints": []
+}
