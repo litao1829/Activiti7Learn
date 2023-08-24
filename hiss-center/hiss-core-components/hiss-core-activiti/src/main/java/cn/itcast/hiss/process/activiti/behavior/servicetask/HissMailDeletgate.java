@@ -13,6 +13,9 @@ import org.activiti.engine.RuntimeService;
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.Expression;
 import org.activiti.engine.impl.bpmn.behavior.MailActivityBehavior;
+import org.activiti.engine.impl.context.Context;
+import org.activiti.engine.impl.el.FixedValue;
+import org.activiti.engine.impl.el.JuelExpression;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 
@@ -44,10 +47,14 @@ public class HissMailDeletgate extends MailActivityBehavior {
         Email email = null;
         try {
             String toStr = getStringFromField(to, execution);
-            String fromStr = getStringFromField(from, execution);
             String ccStr = getStringFromField(cc, execution);
             String bccStr = getStringFromField(bcc, execution);
             String subjectStr = getStringFromField(subject, execution);
+            if(subject instanceof FixedValue && subjectStr.contains("${")){
+                FixedValue fv = (FixedValue)subject;
+                subjectStr = (String) Context.getProcessEngineConfiguration().getExpressionManager().createExpression(fv.getExpressionText()).getValue(execution);
+            }
+
             String textStr = textVar == null ? getStringFromField(text, execution) : getStringFromField(getExpression(execution, textVar), execution);
             String htmlStr = htmlVar == null ? getStringFromField(html, execution) : getStringFromField(getExpression(execution, htmlVar), execution);
             String charSetStr = getStringFromField(charset, execution);
@@ -58,14 +65,14 @@ public class HissMailDeletgate extends MailActivityBehavior {
                 method.invoke(this,attachments, execution, files, dataSources);
             } catch (Exception e) {
             }
-
             email = createEmail(textStr, htmlStr, false);
+            MailServerInfo mailServerInfo = setMailServerInfoProperties(email, execution.getTenantId());
+            String fromStr = mailServerInfo.getMailServerUsername();
             addTo(email, toStr);
             setFrom(email, fromStr, execution.getTenantId());
             addCc(email, ccStr);
             addBcc(email, bccStr);
             setSubject(email, subjectStr);
-            MailServerInfo mailServerInfo = setMailServerInfoProperties(email, execution.getTenantId());
             setCharset(email, charSetStr);
             attach(email, files, dataSources);
             if(mailServerInfo!=null) {
@@ -80,6 +87,7 @@ public class HissMailDeletgate extends MailActivityBehavior {
         } catch (ActivitiException e) {
             handleException(execution, e.getMessage(), e, doIgnoreException, exceptionVariable);
         } catch (EmailException e) {
+            e.printStackTrace();
             handleException(execution, "Could not send e-mail in execution " + execution.getId(), e, doIgnoreException, exceptionVariable);
         }
         leave(execution);
