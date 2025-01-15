@@ -25,6 +25,7 @@
         <activiti.version>7.10.0</activiti.version>
         <hutool_all_version>5.8.18</hutool_all_version>
         <fastjson_version>2.0.31</fastjson_version>
+        <activiti.version>7.10.0</activiti.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -59,6 +60,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.activiti</groupId>
+                <artifactId>activiti-dependencies</artifactId>
+                <version>${activiti.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>

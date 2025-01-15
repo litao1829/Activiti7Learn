@@ -1,2 +1,17 @@
-server:
-  port: 8081
+spring:
+  server:
+    port: 8081
+  activiti:
+    database-schema-update: true #自动创建数据库
+    db-history-used: true #开启流程历史
+    history-level: full # 历史流程数据全部记录到历史表中，支持none、activity、audit、full，4种粒度的数据，常用的就是full
+  datasource:
+    password: 87sdhf298TYUUIz2!
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.126.128:3306/activiti-demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&nullCatalogMeansCurrent=true
+  main:
+    allow-bean-definition-overriding: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #执行的sql打印在控制台
