@@ -5,6 +5,7 @@ import org.activiti.engine.RuntimeService;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.DeploymentBuilder;
 import org.activiti.engine.repository.Model;
+import org.activiti.engine.runtime.ProcessInstance;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -47,8 +48,9 @@ public class ProcessRunTest {
      * 运行测试
      */
     @ParameterizedTest
-    @ValueSource(strings = {"流程定义key"})
-    public void testRun(String key){
-
+    @ValueSource(strings = {"hiss_process_12_1736947305758"})
+    public void testRun(String procdefKey){
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(procdefKey);
+        System.out.println(processInstance.getId());
     }
 }
