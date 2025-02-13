@@ -157,8 +157,13 @@ public enum HandlerIdClientEnum {
     FORM_SUBMIT_DATA("SUBMIT_FORM_DATA", "提交表单数据"),
 
     FORM_ACTIVITI_DEFINITION_GET_FORM_DIFINITION("ACTIVITI_DEFINITION_GET_FORM_DIFINITION", "获取流程定义表单定义"),
-    ;
 
+
+
+
+    //=======================================学习=======================================
+    FLOW_M_SAVE_MODEL_FOR_DEV("FLOW_M_SAVE_MODEL_FOR_DEV","学习"),
+    ;
 
     private String id;
 
