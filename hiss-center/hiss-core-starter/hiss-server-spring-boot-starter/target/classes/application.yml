@@ -13,7 +13,8 @@ spring:
     password: 87sdhf298TYUUIz2!
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.126.128:3306/hiss-dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&nullCatalogMeansCurrent=true
+#    url: jdbc:mysql://192.168.126.128:3306/hiss-dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&nullCatalogMeansCurrent=true
+    url: jdbc:mysql://192.168.126.128:3306/activiti-demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&nullCatalogMeansCurrent=true
 
 mybatis-plus:
   type-aliases-package: cn.itcast.hiss.server.pojos

@@ -30,4 +30,7 @@ public interface ActivitiService {
 
     Set<String> doGetClientUserInfo(DelegateExecution execution, String assignee);
 
+    void modelToDeploment(Message message, MessageContext messageContext);
+
+    void startByModel(Message message, MessageContext messageContext, boolean b);
 }
