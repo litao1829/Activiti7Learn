@@ -29,13 +29,13 @@ public class ProcessHandleTest {
      * @param taskId
      */
     @ParameterizedTest
-    @ValueSource(strings = {"c9886b0e-def1-11ef-acca-005056c00001"})
+    @ValueSource(strings = {"d33812d8-f50a-11ef-ad7b-005056c00001"})
     public void testCompleteNode2(String taskId){
         //接受表单信息，并保存到数据库
         Map<String,Object> variables = new HashMap<>();
         variables.put("userName","张三");
         variables.put("startDate","2025-1-30");
-        variables.put("days","7");
+        variables.put("days",7);
         variables.put("reason","过年回家");
         //告诉Activiti当前任务已经完成，可以执行下一步
         taskService.complete(taskId,variables);
@@ -46,7 +46,7 @@ public class ProcessHandleTest {
      * 同意
      */
     @ParameterizedTest
-    @ValueSource(strings = {"67b51c83-deee-11ef-8887-005056c00001"})
+    @ValueSource(strings = {"7e3ae8ea-f50b-11ef-bc3e-005056c00001"})
     public void testAgree(String taskId){
         // 把【同意】看做是填写的【审批表单（包括：审批结果、审批意见）】中的approvalStatus字段
         Map<String, Object> variables = new HashMap<>();
